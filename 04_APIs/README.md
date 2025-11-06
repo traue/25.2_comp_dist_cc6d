@@ -48,8 +48,8 @@ Responda:
 ## Formato da Entrega
 
 - Arquivo em texto ou PDF
-- Individual
-- **2 a 3 páginas**  
+- Individual ou em duplas (apenas um entregsa com o nome de ambos)
+- **2 a 3 páginas** (pode ser mais)
 - Linguagem clara e objetiva  
 - Usar analogias/metáforas para facilitar entendimento  
 - Citar fontes utilizadas  
