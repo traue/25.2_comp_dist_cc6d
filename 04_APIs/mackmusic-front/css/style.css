@@ -1,0 +1,323 @@
+:root {
+    /* Define variáveis CSS globais para facilitar manutenção de temas e cores */
+    --primary-color: #4361ee;       /* Azul principal – destaque em títulos e botões */
+    --secondary-color: #3f37c9;     /* Azul mais escuro – usado em hover e interações */
+    --accent-color: #4895ef;        /* Azul claro – realce em elementos ativos (ex: bordas focadas) */
+    --light-color: #f8f9fa;         /* Cor clara – usada como fundo suave */
+    --dark-color: #212529;          /* Cor escura – usada principalmente em textos */
+    --success-color: #4bb543;       /* Verde – mensagens de sucesso */
+    --error-color: #ff3333;         /* Vermelho – mensagens de erro ou botões críticos */
+}
+
+* {
+    /* Reseta margens e paddings padrão e define caixa de dimensionamento */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;        /* Inclui padding e borda no cálculo total de largura/altura */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte limpa e legível */
+}
+
+body {
+    background-color: #f5f5f5;      /* Fundo neutro claro para toda a página */
+    color: var(--dark-color);       /* Cor de texto padrão */
+    line-height: 1.6;               /* Espaçamento entre linhas para melhor leitura */
+}
+
+.container {
+    max-width: 1200px;              /* Define limite de largura para o conteúdo */
+    margin: 0 auto;                 /* Centraliza horizontalmente */
+    padding: 20px;                  /* Espaçamento interno */
+}
+
+.header {
+    text-align: center;            /* Centraliza o conteúdo do cabeçalho */
+    margin-bottom: 40px;           /* Espaço inferior */
+    padding: 20px 0;               /* Espaçamento vertical */
+}
+
+.header h1 {
+    font-size: 2.5rem;             /* Título grande */
+    color: var(--primary-color);   /* Usa a cor principal como destaque */
+    margin-bottom: 10px;           /* Espaço inferior ao título */
+}
+
+.header p {
+    font-size: 1.1rem;             /* Subtítulo levemente maior que o normal */
+    color: var(--dark-color);      /* Cor de texto padrão */
+}
+
+.main-content {
+    display: flex;                 /* Flexbox para centralizar o conteúdo */
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;              /* Garante uma altura mínima, centralizando verticalmente */
+}
+
+.login-container, .register-container {
+    background: white;            /* Fundo branco para contraste com o body */
+    padding: 30px;
+    border-radius: 10px;          /* Cantos arredondados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidade */
+    width: 100%;
+    max-width: 400px;             /* Limita largura em telas maiores */
+}
+
+.login-container h2, .register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;       /* Campos do formulário dispostos verticalmente */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input:focus {
+    outline: none;                /* Remove contorno ao focar */
+    border-color: var(--accent-color); /* Realce ao foco no campo */
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.register-link, .login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-link a, .login-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-link a:hover, .login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Mensagem de sucesso exibida após ações como registro ou envio de avaliação */
+.success-message {
+    background-color: rgba(75, 181, 67, 0.2);
+    color: var(--success-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: none;
+}
+
+/* ----------------- Estilização do Dashboard ----------------- */
+
+.user-info {
+    display: flex;                        /* Exibe informações do usuário em linha */
+    justify-content: space-between;      /* Espaçamento entre os elementos */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;                            /* Espaço entre campo de busca e botão */
+    margin-bottom: 30px;
+}
+
+.search-container input {
+    flex: 1;                              /* Ocupa o espaço disponível */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: var(--accent-color); /* Cor diferenciada para botão de ação principal */
+}
+
+.btn-logout {
+    background-color: var(--error-color); /* Vermelho para botão de logout (ação crítica) */
+}
+
+.songs-list {
+    display: grid;                        /* Grid para exibir músicas em cards */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.song-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s;          /* Animação ao passar o mouse */
+}
+
+.song-card:hover {
+    transform: translateY(-5px);         /* Efeito visual de "levantar" o card */
+}
+
+.song-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.song-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.song-artist {
+    color: var(--dark-color);
+    margin-bottom: 5px;
+}
+
+.song-details {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.rating-container {
+    margin-top: 15px;
+}
+
+.rating-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rating-stars {
+    color: #ffc107;                       /* Cor amarela (estilo estrelas) */
+    margin-right: 10px;
+}
+
+.rating-count {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.rating-list {
+    max-height: 200px;
+    overflow-y: auto;                    /* Rolagem vertical para avaliações longas */
+    padding-right: 10px;
+}
+
+.rating-item {
+    background: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.rating-user {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.rating-comment {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.rating-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.no-ratings {
+    color: #666;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+}
+
+.no-results {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+    grid-column: 1 / -1;                /* Ocupa toda a largura da grid */
+}
+
+.add-rating-form {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;        /* Separação visual */
+}
+
+.add-rating-form h4 {
+    margin-bottom: 10px;
+}
+
+.star-rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.star-rating .star {
+    cursor: pointer;
+    color: #ddd;
+    font-size: 1.2rem;
+}
+
+.star-rating .star.active {
+    color: #ffc107;                    /* Estrela selecionada */
+}
+
+.add-rating-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    resize: vertical;
+    min-height: 60px;
+}
+
+.add-rating-form button {
+    width: 100%;                       /* Botão de envio ocupa toda a largura */
+}

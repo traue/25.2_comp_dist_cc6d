@@ -1,5 +1,6 @@
 package br.mackenzie.mackmusic.model;
 
+import com.fasterxml.jackson.databind.ser.std.UUIDSerializer;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,11 +21,13 @@ public class Artist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID uuuid;
+    private UUID id;
 
     private String name;
+
     private String country;
 
     @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Song> sonsgs = new ArrayList<>();
+    private List<Song> songs = new ArrayList<>();
+
 }

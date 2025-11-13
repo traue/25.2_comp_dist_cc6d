@@ -13,8 +13,8 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "albums")
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Album {
@@ -34,6 +34,5 @@ public class Album {
         this.songs.add(song);
         song.getAlbums().add(this);
     }
-
 
 }

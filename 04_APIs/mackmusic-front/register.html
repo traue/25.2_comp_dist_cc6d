@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Rating App - Registro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Crie sua conta</h1>
+            <p>Junte-se à nossa comunidade de amantes de música</p>
+        </header>
+        
+        <main class="main-content">
+            <div class="register-container">
+                <h2>Registro</h2>
+                <form id="registerForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" required>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <span class="error-message" id="confirmPasswordError"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn">Registrar</button>
+                </form>
+                
+                <div class="login-link">
+                    <p>Já tem uma conta? <a href="index.html">Faça login</a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/md5.js"></script>
+    <script src="scripts/auth.js"></script>
+</body>
+</html>

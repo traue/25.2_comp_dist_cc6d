@@ -1,30 +1,12 @@
 services:
   mariadb:
     image: mariadb:latest
-    container_name: mariadb_mackmusic_06d
+    container_name: mariadb_mackmusic
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: mackmusic
+      MYSQL_DATABASE: music_recommender
       MYSQL_USER: user
       MYSQL_PASSWORD: Senha123
-      MARIADB_AUTO_UPGRADE: "1"
     ports:
       - "3306:3306"
-    volumes:
-      - db_data:/var/lib/mysql
-
-  phpmyadmin:
-    image: phpmyadmin:latest
-    container_name: phpmyadmin_mackmusic_06d
-    restart: unless-stopped
-    environment:
-      PMA_HOST: mariadb
-      PMA_PORT: 3306
-      PMA_ARBITRARY: "0"
-      UPLOAD_LIMIT: 128M
-    ports:
-      - "8080:80"
-
-volumes:
-  db_data:
